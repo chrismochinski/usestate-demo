@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import App2 from './App2';
 
 function App() {
+
+  const [count, setCount] = useState(1);
+
+  const partyTime = () => {
+    console.log('count is:', count + 1);
+    setCount(count => +count * 2.3);
+  }
+
+  const morePartier = (incoming: string) => {
+    console.log("incoming is:", incoming)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button style={{margin: '10vh auto 10vh'}} onClick={() => {
+        partyTime(); 
+        partyTime();
+        morePartier('THINGS');
+      }}>{count}</button>
+     <App2 />
     </div>
   );
 }
