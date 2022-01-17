@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 
 const App2 = () => {
 
-    const [firstName, setFirstName] = useState<string>('')
-    const [lastName, setLastName] = useState<string>('')
+    const [firstName, setFirstName] = React.useState('')
+    const [lastName, setLastName] = React.useState('')
 
 
     return (
